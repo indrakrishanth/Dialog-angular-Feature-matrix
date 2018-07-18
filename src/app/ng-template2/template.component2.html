@@ -1,0 +1,19 @@
+<h3 >create dialog as dyanamic using template</h3>
+
+<div id='dialogTarget'>
+    <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dialogBtnClick()">Open Dialog</button>
+    
+    <ejs-dialog id="defaultDialog" #defaultDialog [visible]='visible' [allowDragging]='dialogdragging' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    [width]='dialogWidth'>
+        <ng-template #content>
+            <p> This is from content template. </p>
+        </ng-template>
+        <ng-template #header>
+            <div><h4>Dialog header</h4></div>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <div><button class='e-btn e-control' (click)="dialogBtnClick()">OK</button></div>
+        </ng-template>
+    </ejs-dialog>    
+</div>
+

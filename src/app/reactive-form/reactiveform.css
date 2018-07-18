@@ -1,0 +1,17 @@
+  
+  .form-horizontal {
+    margin-top: 80px;
+  }
+  
+  form {
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  #details {
+    margin-top: 10px;
+  }
+
+  .buttons {
+    margin: 20px;
+  }

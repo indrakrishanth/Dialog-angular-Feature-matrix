@@ -1,0 +1,103 @@
+<div class="control-section" id='ModelTarget' style='height: 625px'>
+  <div id='dialogTarget' style = 'position: relative'>
+  <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dialogBtnClick()">Open Dialog</button>
+  
+  <ejs-dialog id="defaultDialog" #defaultDialog [content]='contentData' [visible]='visible' [header]='dialogHeader' [allowDragging]='dialogdragging' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+  [width]='dialogWidth' (created)="dialogCreated()" (beforeClose)="dialogBeforeClose()" (beforeOpen)="dialogBeforeOpen()" (drag)="dialogDrag()" (dragStart)="dialogDragStart()" (dragStop)="dialogDragStop()">
+  </ejs-dialog>
+  </div>
+  <div id='Events'>
+    <div id='eventarg'> Events...<br>
+      <div style='float: right'> <button id="clear" Class="e-control e-btn" (click)="refreshArgs()">Clear</button></div>
+      <span id='eventargs'></span></div>
+    
+  </div>
+</div>
+
+<div class="action-section">
+  Methods: 
+  <div>
+    <button id="show" Class="e-control e-btn" (click)="dialogBtnClick()">Show</button>
+
+    <button id="hide" Class="e-control e-btn" (click)="hideDialog()">Hide</button>
+
+    <button id="refresh" Class="e-control e-btn" (click)="refreshDialog()">RefreshPosition</button>
+    
+    <button id="destroy" Class="e-control e-btn" (click)="destroyDialog()">Destroy</button>
+  </div>
+  Properties:
+  <div>
+    <button id="drag" Class="e-control e-btn" (click)="enableDrag()">Disable dragging</button>
+
+    <button id="esc" Class="e-control e-btn" (click)="closeOnEsc()">Disable closeOnEsc</button>
+
+    <button id="rtl" Class="e-control e-btn" (click)="enableRtl()">Enable RTL</button>
+    
+    <button id="modal" Class="e-control e-btn" (click)="isModel()">Enable Modal</button>
+    
+    <button id="closeicon" Class="e-control e-btn" (click)="closeIcon()">Show close icon</button>
+
+    <button id="visible" Class="e-control e-btn" (click)="visibileDialog()">Dialog hide</button>
+  </div>
+
+  <div style='margin-top: 15px'>
+    <span> AnimationSettings:</span>
+    <span style='margin-left: 25px'>
+        <ejs-dropdownlist id='games' width='150px' #sample [dataSource]='themes' (change)='onThemeChange($event)' placeholder='Animations' popupHeight='300px'></ejs-dropdownlist>
+    </span>
+  </div>
+
+  <div style='margin-top: 25px'>
+    <span> Dialog position:</span>
+    <span style='margin: 0 25px'>
+        <ejs-dropdownlist id='position' width='150px' [dataSource]='position' (change)='onPositionChange($event)' placeholder='Dialog positions' popupHeight='300px'></ejs-dropdownlist>
+    </span> or
+    <span style='margin: 0 10px'> X, Y </span>
+    <input type="text" id='xyValues' name='position' (blur)='changePosition()'/>
+  </div>
+
+  <div style='margin-top: 25px'>
+    <span style='margin: 0 25px 0 0'> Height:</span>
+    <input type="text" id='height' name='height' (blur)='changeHeight()'/>
+    <span style='margin: 0 25px'> Width:</span>
+    <input type="text" id='width' name='width' (blur)='changeWidth()'/>
+  </div>
+
+  <div style='margin-top: 25px'>
+      <span> zIndex:</span>
+      <span style='margin-left: 70px'>
+         <input id='zindex' type='number' (blur)='changezIndex()'/>
+      </span>
+  </div>
+
+  <div style='margin-top: 25px'>
+      <span> Buttons:</span>
+      <span style='margin: 0 10px 0 30px'> isPrimary 
+         <input id='primary' type='checkbox'/>
+      </span>
+      <span style='margin-left: 30px'> Button text
+         <input id='buttonText' type='text' (blur)='CreateButton()'/>
+      </span>
+  </div>
+
+  <div style='margin-top: 25px'>
+      <span> Content:</span>
+      <span style='margin-left: 70px'>
+         <textarea id='contentArea' style="width: 200px; height: 30px;" (blur)='changeContent()'></textarea>
+      </span>
+  </div>
+
+  <div style='margin-top: 25px'>
+      <span> Header:</span>
+      <span style='margin-left: 75px'>
+         <textarea id='headerArea' style="width: 200px; height: 30px;" (blur)='changeHeader()'></textarea>
+      </span>
+  </div>
+
+  <div style='margin-top: 25px'>
+      <span> Footer template:</span>
+      <span style='margin-left: 25px'>
+         <textarea id='footerArea' style="width: 200px; height: 30px;" (blur)='changeFooter()'></textarea>
+      </span>
+  </div>
+</div>

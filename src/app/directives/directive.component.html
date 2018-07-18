@@ -1,0 +1,12 @@
+<h3 >example for directives</h3>
+
+<div id='dialogTarget'>
+    <button  ejs-button id="dialogBtn" Class="e-control e-btn" #confirmButton (click)="dialogBtnClick()">Open Dialog</button>
+    
+    <ejs-dialog id="defaultDialog" #defaultDialog [visible]='visible' [header]='dialogHeader' [allowDragging]='dialogdragging' [animationSettings]='animationSettings' [showCloseIcon]='dialogCloseIcon' (open)="dialogOpen()" (close)="dialogClose()" [target]='target'
+    [width]='dialogWidth'>
+    <div directiveContent class="head1"> First Content
+     </div>
+     <div class="head2">second content</div>
+    </ejs-dialog>
+</div>
